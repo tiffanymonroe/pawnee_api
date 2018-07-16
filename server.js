@@ -13,7 +13,8 @@ app.use(express.static('/api'));
 
 //Connect to MongoDB
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/staff');
+const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/staff';
+mongoose.connect(mongoUri);
 mongoose.connection.once('open', () => {
   console.log('connected to mongo');
 });
