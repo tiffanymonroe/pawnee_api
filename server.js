@@ -26,7 +26,7 @@ app.use((req, res, next)=>{
 });
 
 //Index Route
-app.get('/api/staff', (req, res) => {
+app.get('/staff', (req, res) => {
   Staff.find({}, (err, allStaff) => {
       res.json(allStaff)
   });
@@ -34,9 +34,9 @@ app.get('/api/staff', (req, res) => {
 
 
 //Add Seed Data
-Staff.collection.insertMany(parksStaff, (error, data) => {
-console.log('Seed data added. Dammit, Jerry!');
-});
+// Staff.collection.insertMany(parksStaff, (error, data) => {
+// console.log('Seed data added. Dammit, Jerry!');
+// });
 
 const port = process.env.PORT || 1817
 app.listen(port, () => {
