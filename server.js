@@ -35,9 +35,9 @@ app.get('/staff', (req, res) => {
 
 
 //Add Seed Data
-// Staff.collection.insertMany(parksStaff, (error, data) => {
-// console.log('Seed data added. Dammit, Jerry!');
-// });
+Staff.collection.insertMany(parksStaff, (error, data) => {
+console.log('Seed data added. Dammit, Jerry!');
+});
 
 const port = process.env.PORT || 1817
 app.listen(port, () => {
